@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_home">
+
+    <fragment
+        android:id="@+id/navigation_home"
+        android:name="joshua.app.sportsnewsapp.ui.home.HomeFragment"
+        android:label="   "
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_navigation_home_to_standingsFragment"
+            app:destination="@id/standingsFragment" />
+        <action
+            android:id="@+id/action_navigation_home_to_seasonsFragment"
+            app:destination="@id/seasonsFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_dashboard"
+        android:name="joshua.app.sportsnewsapp.ui.dashboard.DashboardFragment"
+        android:label="   "
+        tools:layout="@layout/fragment_dashboard" />
+
+    <fragment
+        android:id="@+id/navigation_notifications"
+        android:name="joshua.app.sportsnewsapp.ui.notifications.NotificationsFragment"
+        android:label="    "
+        tools:layout="@layout/fragment_notifications" />
+    <fragment
+        android:id="@+id/standingsFragment"
+        android:name="joshua.app.sportsnewsapp.ui.standings.StandingsFragment"
+        android:label="Standings"
+        tools:layout="@layout/fragment_standings" >
+        <action
+            android:id="@+id/action_standingsFragment_to_navigation_home"
+            app:destination="@id/navigation_home" />
+    </fragment>
+    <fragment
+        android:id="@+id/seasonsFragment"
+        android:name="joshua.app.sportsnewsapp.ui.seasons.SeasonsFragment"
+        android:label="Seasons"
+        tools:layout="@layout/fragment_seasons" >
+        <action
+            android:id="@+id/action_seasonsFragment_to_navigation_home"
+            app:destination="@id/navigation_home" />
+    </fragment>
+</navigation>

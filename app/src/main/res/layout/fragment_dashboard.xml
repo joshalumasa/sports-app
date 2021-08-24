@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.dashboard.DashboardFragment">
+
+    <RelativeLayout
+        android:id="@+id/topbuttons"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:id="@+id/topview"
+            android:background="@drawable/down_curve"
+            android:layout_height="150dp">
+            <include layout="@layout/scorers_text"/>
+        </LinearLayout>
+        <ProgressBar
+            android:layout_width="match_parent"
+            android:id="@+id/progressloading"
+            android:layout_marginStart="10dp"
+            android:visibility="gone"
+            android:indeterminate="true"
+            android:layout_below="@+id/topview"
+            android:layout_marginEnd="10dp"
+            style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+            android:layout_height="wrap_content"/>
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:id="@+id/recyclerplayer"
+            android:layout_below="@id/progressloading"
+            android:layout_marginTop="10dp"
+            android:layoutAnimation="@anim/layout_animation"
+            android:layout_marginBottom="45dp"
+            android:layout_height="match_parent"/>
+    </RelativeLayout>
+
+</LinearLayout>
